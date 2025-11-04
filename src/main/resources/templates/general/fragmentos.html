@@ -8,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     xmlns:th="http://www.thymeleaf.org"      
     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:fragment="head">
-        <title>Outlet Surf Skate</title>
+        <title>Inicio - Outlet Surf Skate</title>
         <meta charset="UTF-8"/>
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
@@ -20,6 +20,50 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     <body>
         <header th:fragment="header" class="header">
+            <nav class="navbar navbar-expand-lg bg-white border-bottom py-2">
+                <div class="container">
+                    <!-- IZQUIERDA: Redes sociales -->
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="#" class="btn btn-link text-secondary p-0 fs-5"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="btn btn-link text-secondary p-0 fs-5"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="btn btn-link text-secondary p-0 fs-5"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                    <!-- CENTRO: Logo -->
+                    <a class="navbar-brand mx-auto fw-bold fs-2" href="#" style="letter-spacing:-2px;">[[#{app.name}]]</a>
+                    <!-- DERECHA: Íconos interactivos -->
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="#" class="btn btn-link text-secondary p-0 fs-5" title="Bolsa de compras">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </a>
+                        <a href="#" class="btn btn-link text-secondary p-0 fs-5" title="Acceder">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                        <a href="#" class="btn btn-link text-secondary p-0 fs-5" title="Buscar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- MENU debajo del logo -->
+                <div class="container justify-content-center">
+                    <ul class="nav justify-content-center w-100">
+                        <li class="nav-item"><a class="nav-link text-secondary fw-semibold" href="/categoria/listado">MARCAS</a></li>
+                        <li class="nav-item"><a class="nav-link text-secondary fw-semibold" href="#">HOMBRES</a></li>
+                        <li class="nav-item"><a class="nav-link text-secondary fw-semibold" href="#">MUJERES</a></li>
+                        <li class="nav-item"><a class="nav-link text-secondary fw-semibold" href="#">RASTREO DE PEDIDO</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container my-2 border-bottom">
+                <div class="text-center text-secondary fw-bold py-2" style="font-size:1rem;">
+                    ENVÍO GRATIS EN TODAS LAS COMPRAS MAYORES A 35.000 COLONES
+                </div>
+            </div>
+            
+        </header>
+
+
+
+        <!--header th:fragment="header" class="header">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">[[#{app.name}]]</a>
@@ -56,11 +100,55 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>
                 </div>
             </nav>
-            
-        </header>
-        
-        <footer th:fragment="footer" class="p-2 mt-5 bg-info text-white">
-            <p class="lead text-center">[[#{plantilla.derechos}]] &COPY;</p>
+
+        </header-->
+
+        <!--footer th:fragment="footer" class="bg-dark text-light mt-5 py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                    <span>[[#{footer.rights}]]</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="https://www.instagram.com/outlet_surfskate_heredia/" class="text-light" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="https://www.facebook.com/outletsurfskateoficial" class="text-light" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-facebook fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </footer-->
+
+        <footer th:fragment="footer" class="bg-black text-white pt-5 pb-3">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-6 mb-3">
+                        <!-- Logo/NOMBRE DE LA TIENDA -->
+                        <h2 class="fw-bold mb-2">[[#{app.name}]]</h2>
+                        <p class="mb-4">[[#{app.slogan}]]</p>
+                        <!-- ICONOS REDES SOCIALES -->
+                        <div class="d-flex justify-content-center gap-4 mb-2">
+                            <a href="https://www.facebook.com/outletsurfskateoficial" class="text-white fs-3" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/outlet_surfskate_heredia/" class="text-white fs-3" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white fs-3" target="_blank" rel="noopener">
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center text-white-50 small">
+                        [[#{footer.rights}]]
+                    </div>
+                </div>
+            </div>
         </footer>
+
+
+
     </body>
 </html>

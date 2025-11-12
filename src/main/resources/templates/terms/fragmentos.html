@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"      
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+    <head th:replace="~{general/fragmentos :: head}"/>
+    <body>
+        <header th:replace="~{general/fragmentos :: header}"/>
+
+        <section th:fragment="termss" class="p-3">
+            <style>
+                .terminos-container {
+                    max-width: 850px;
+                    margin: 36px auto;
+                    font-family: 'Open Sans', Arial, sans-serif;
+                    background: #fff;
+                    color: #202020;
+                }
+                .terminos-container h2 {
+                    text-align: center;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    margin-bottom: 2rem;
+                    margin-top: 1.5rem;
+                }
+                .terminos-container h5 {
+                    margin-top: 2rem;
+                    font-weight: 700;
+                    font-size: 1.09rem;
+                }
+                .terminos-container ul {
+                    margin-bottom: 1.1rem;
+                }
+                .terminos-container li {
+                    margin-bottom: 0.55rem;
+                }
+                .terminos-container strong {
+                    font-weight: 700;
+                }
+                .terminos-container p, .terminos-container ul {
+                    font-size: 1rem;
+                }
+            </style>
+            <div class="terminos-container px-3 px-md-5">
+                <h2 th:text="#{terminos.titulo}">TÉRMINOS Y CONDICIONES</h2>
+
+                <h5 th:text="#{terminos.uso.titulo}">Términos de uso</h5>
+                <p th:text="#{terminos.uso}"></p>
+
+                <h5 th:text="#{terminos.compra.titulo}">Términos de compra</h5>
+                <ul>
+                    <li th:text="#{terminos.compra1}"></li>
+                    <li th:text="#{terminos.compra2}"></li>
+                    <li th:text="#{terminos.compra3}"></li>
+                </ul>
+
+                <h5 th:text="#{terminos.envio.titulo}">Envíos</h5>
+                <p th:text="#{terminos.envio}"></p>
+
+                <h5 th:text="#{terminos.devoluciones.titulo}">Devoluciones y cambios</h5>
+                <p th:text="#{terminos.devoluciones}"></p>
+
+                <h5 th:text="#{terminos.garantia.titulo}">Garantía</h5>
+                <p th:text="#{terminos.garantia}"></p>
+
+                <h5 th:text="#{terminos.pagos.titulo}">Pagos</h5>
+                <ul>
+                    <li th:text="#{terminos.pagos1}"></li>
+                    <li th:text="#{terminos.pagos2}"></li>
+                </ul>
+
+                <h5 th:text="#{terminos.contenido.titulo}">Contenido y privacidad</h5>
+                <p th:text="#{terminos.contenido}"></p>
+
+                <h5 th:text="#{terminos.cambios.titulo}">Actualizaciones</h5>
+                <p th:text="#{terminos.cambios}"></p>
+            </div>
+        </section>
+
+        <footer th:replace="~{general/fragmentos :: footer}"/>
+    </body>
+</html>

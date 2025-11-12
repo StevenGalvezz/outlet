@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <section th:fragment="detalleProducto">
+            <style>
+                .product-main-img {
+                    max-width: 340px;
+                    width: 100%;
+                    display: block;
+                    margin: 0 auto;
+                }
+                .product-thumb {
+                    width: 64px;
+                    margin-bottom: 10px;
+                    opacity: 0.7;
+                    border: 2px solid transparent;
+                    cursor: pointer;
+                    transition: border 0.2s, opacity 0.2s;
+                }
+                .product-thumb.active,
+                .product-thumb:hover {
+                    opacity: 1;
+                    border: 2px solid #222;
+                }
+                .product-card-related {
+                    min-height: 200px;
+                    transition: transform 0.18s cubic-bezier(.47,.43,.71,1.2), box-shadow 0.18s;
+                }
+                .product-card-related:hover {
+                    transform: translateY(-4px) scale(1.038);
+                    box-shadow: 0 4px 24px 0 rgba(30,30,30,0.18);
+                    z-index: 3;
+                }
+            </style>
+
+            <div class="container py-5">
+                <div class="row gy-4">
+                    <!-- Galería -->
+                    <div class="col-md-5 text-center text-md-start">
+                        <!-- Miniaturas -->
+                        <div class="d-flex flex-md-column flex-row align-items-md-start align-items-center mb-3 gap-2 gap-md-0">
+                            <img src="/img/vans1.jpg" class="product-thumb active" alt="mini 1" />
+                            <img src="/img/vans2.jpg" class="product-thumb" alt="mini 2" />
+                        </div>
+                        <!-- Imagen principal -->
+                        <img src="/img/vans1.jpg" class="product-main-img img-fluid rounded mb-2 shadow-sm" alt="producto" />
+                    </div>
+                    <!-- Información Producto -->
+                    <div class="col-md-7">
+                        <h3 class="fw-bold mb-2">CAMISETA MANGA CORTA HOMBRE MN CLASSIC PRINT BOX SS TEE</h3>
+                        <div class="h4 text-dark mb-1">₡10,000</div>
+                        <p class="mb-2"><small class="text-secondary">Color:</small> 
+                            <img src="/img/vans1.jpg" style="width:34px; vertical-align:middle;" class="rounded shadow-sm ms-1" />
+                        </p>
+                        <div class="mb-2">
+                            <span class="me-2"><small class="text-secondary">Talla:</small></span>
+                            <button type="button" class="btn btn-outline-dark btn-sm me-1">L</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm">XL</button>
+                        </div>
+                        <div class="mb-3">
+                            <div class="input-group" style="width: 130px;">
+                                <button class="btn btn-outline-dark btn-sm" type="button">-</button>
+                                <input type="text" class="form-control text-center py-0" value="1" style="max-width:42px;">
+                                    <button class="btn btn-outline-dark btn-sm" type="button">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark px-4 mb-3 fw-bold" style="border-radius:20px;">AÑADIR AL CARRITO</button>
+                        <div>
+                            <span class="text-secondary"><b>Categorías:</b> HOMBRE, ROPA, SKATEBOARDING, VANS</span>
+                            <br>
+                                <span class="text-secondary"><b>Etiquetas:</b> camiseta-manga-corta, hombre, ropa, skateboarding, vans</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Línea divisoria -->
+                <hr class="my-5">
+
+                    <!-- Productos relacionados -->
+                    <h5 class="fw-bold mb-4">PRODUCTOS RELACIONADOS</h5>
+                    <div class="row g-4">
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <span class="badge bg-dark position-absolute mt-2 ms-2 z-1">SALE!</span>
+                                    <img src="/img/pantalon.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">PANTALON HOMBRE REGULAR WORK PANT</div>
+                                        <div class="fw-bold mt-1 text-dark">₡15,000</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <span class="badge bg-dark position-absolute mt-2 ms-2 z-1">SALE!</span>
+                                    <img src="/img/trucks1.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">TRUCKS UNISEX AF1 THEORIES</div>
+                                        <div class="fw-bold mt-1 text-dark">₡10,000</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <img src="/img/zapato1.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">HOMBRE DC METRIC S</div>
+                                        <div class="fw-bold mt-1 text-dark">₡49,900</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <img src="/img/zapato2.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">HOMBRE CENTRAL</div>
+                                        <div class="fw-bold mt-1 text-dark">₡33,900</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+
+        </section>
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

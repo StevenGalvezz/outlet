@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"      
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:fragment="head">
+        <title>Inicio - Outlet Surf Skate</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <!--script th:src="@{/js/rutinas.js}"></script-->
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>        
+    </head>
+    <body>
+        <header th:replace="~{general/fragmentos :: header}"/>
+
+        <section th:fragment="primitiveOutkast" class="p-3">
+            <style>
+                .product-main-img {
+                    max-width: 340px;
+                    width: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 0;
+                }
+                .product-thumb {
+                    width: 64px;
+                    margin-bottom: 10px;
+                    opacity: 0.7;
+                    border: 2px solid transparent;
+                    cursor: pointer;
+                    transition: border 0.2s, opacity 0.2s;
+                }
+                .product-thumb.active,
+                .product-thumb:hover {
+                    opacity: 1;
+                    border: 2px solid #222;
+                }
+                .product-card-related {
+                    min-height: 200px;
+                    transition: transform 0.18s cubic-bezier(.47,.43,.71,1.2), box-shadow 0.18s;
+                }
+                .product-card-related:hover {
+                    transform: translateY(-4px) scale(1.038);
+                    box-shadow: 0 4px 24px 0 rgba(30,30,30,0.18);
+                    z-index: 3;
+                }
+            </style>
+
+            <div class="container py-5">
+                <div class="row gy-4">
+                    <!-- Galería -->
+                    <div class="col-md-5 text-center text-md-start">
+                        <!-- Miniaturas -->
+                        <div class="d-flex flex-md-column flex-row align-items-md-start align-items-center mb-3 gap-2 gap-md-0">
+                            <img src="/img/PrimitiveBlanca.jpg" class="product-thumb active" alt="mini 1" />
+                            <img src="/img/primitiveAtras.jpg" class="product-thumb" alt="mini 2" />
+                        </div>
+                        <!-- Imagen principal -->
+                        <img src="/img/PrimitiveBlanca.jpg" class="product-main-img img-fluid rounded mt-0 shadow-sm" alt="producto" />
+                    </div>
+                    <!-- Información Producto -->
+                    <div class="col-md-7">
+                        <h3 class="fw-bold mb-2">Primitive x Outkast</h3>
+                        <div class="h4 text-dark mb-1">₡9,990</div>
+                        <p class="mb-2"><small class="text-secondary">Color:</small> 
+                            <img src="/img/PrimitiveBlanca.jpg" style="width:34px; vertical-align:middle;" class="rounded shadow-sm ms-1" />
+                        </p>
+                        <div class="mb-2">
+                            <span class="me-2"><small class="text-secondary">Talla:</small></span>
+                            <button type="button" class="btn btn-outline-dark btn-sm me-1">L</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm">XL</button>
+                        </div>
+                        <div class="mb-3">
+                            <div class="input-group" style="width: 130px;">
+                                <button class="btn btn-outline-dark btn-sm" type="button">-</button>
+                                <input type="text" class="form-control text-center py-0" value="1" style="max-width:42px;">
+                                    <button class="btn btn-outline-dark btn-sm" type="button">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark px-4 mb-3 fw-bold" style="border-radius:20px;">AÑADIR AL CARRITO</button>
+                        <div>
+                            <span class="text-secondary"><b>Categorías:</b> HOMBRE, CAMISAS</span>
+                            <br>
+                                <span class="text-secondary"><b>Etiquetas:</b> camiseta-oversized, hombre, camisas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Línea divisoria -->
+                <hr class="my-5">
+
+                    <!-- Productos relacionados -->
+                    <h5 class="fw-bold mb-4">PRODUCTOS RELACIONADOS</h5>
+                    <div class="row g-4">
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <!--span class="badge bg-dark position-absolute mt-2 ms-2 z-1">SALE!</span-->
+                                    <img src="/img/polar92.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">Polar Skate Co Jeans 92 Denim Dark Blue</div>
+                                        <div class="fw-bold mt-1 text-dark">₡24,990</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <!--span class="badge bg-dark position-absolute mt-2 ms-2 z-1">SALE!</span-->
+                                    <img src="/img/trapstarMoreBrandsNegra.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">Trapstar x More Bands OTW Black</div>
+                                        <div class="fw-bold mt-1 text-dark">₡9,990</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <img src="/img/zapato1.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">HOMBRE DC METRIC S</div>
+                                        <div class="fw-bold mt-1 text-dark">₡49,900</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a href="#" class="text-decoration-none text-dark">
+                                <div class="card border-0 product-card-related text-center">
+                                    <img src="/img/zapato2.jpg" class="card-img-top p-3" alt="prod-rel" />
+                                    <div class="card-body py-2">
+                                        <div style="font-size:0.99rem;">HOMBRE CENTRAL</div>
+                                        <div class="fw-bold mt-1 text-dark">₡33,900</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div-->
+                    </div>
+            </div>
+            <div class="container my-5">
+                    <style>
+                        .comment-box {
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            padding: 16px;
+                            max-width: 600px;
+                            margin-top: 40px;
+                            background: #fafafa;
+                        }
+                        .comment {
+                            border-bottom: 1px solid #eee;
+                            padding: 12px 0;
+                        }
+                        .comment:last-child {
+                            border-bottom: none;
+                        }
+                        .comment-username {
+                            font-weight: 700;
+                            color: #333;
+                        }
+                        .comment-text {
+                            margin-top: 4px;
+                            color: #555;
+                        }
+                        textarea.form-control {
+                            resize: vertical;
+                        }
+                    </style>
+
+                    <div class="comment-box">
+                        <h5>Deja tu reseña</h5>
+                        <form id="commentForm" onsubmit="event.preventDefault(); addComment();">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="username" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="comment" class="form-label">Comentario:</label>
+                                <textarea class="form-control" id="comment" rows="3" placeholder="Escribe tu reseña aquí..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+
+                        <h6 class="mt-4">Reseñas</h6>
+                        <div id="commentsList">
+                            <div class="comment">
+                                <div class="comment-username">Juan Carlos</div>
+                                <div class="comment-text">Excelente producto, llegó rápido y en buen estado.</div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-username">Ana Pérez</div>
+                                <div class="comment-text">Me encantó la calidad y el diseño.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <footer th:replace="~{general/fragmentos :: footer}"/>
+    </body>
+</html>

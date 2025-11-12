@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"      
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+    <head th:replace="~{general/fragmentos :: head}"/>
+
+    <body>
+        <header th:replace="~{general/fragmentos :: header}"/>
+
+        <section th:fragment="catalogoPants" class="p-3">
+            <div class="container py-4">
+                <div class="row g-4">
+                    <!-- Producto individual -->
+                    <style>
+                        .card-link, .card-link:visited {
+                            color: inherit;
+                            text-decoration: none;
+                        }
+                        .card-link .card {
+                            transition: transform 0.20s cubic-bezier(.15,.67,.88,.67), box-shadow 0.20s;
+                            cursor: pointer;
+                        }
+                        .card-link .card:hover {
+                            transform: scale(1.035);
+                            box-shadow: 0 4px 24px 0 rgba(30,30,30,0.20);
+                            z-index: 4;
+                        }
+                    </style>
+
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="/nuevo-destino" class="card-link">
+                            <div class="card border-0 rounded-4 position-relative h-100 text-center">
+                                <!--span class="badge bg-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2" style="font-size: 1rem; z-index:2;">SALE!</span-->
+                                <img src="/img/dimeGris.jpg" class="card-img-top mt-3" alt="Producto 1" style="max-height:160px; object-fit:contain; background:#fff;">
+                                    <div class="card-body pb-2 px-2">
+                                        <div class="fw-normal" style="font-size:.97rem;">Dime Pants Grey</div>
+                                        <div class="fw-bold mt-1 mb-1" style="font-size:1.1rem;">₡24,990</div>
+                                    </div>
+                                    <!--button class="btn btn-outline-dark mx-auto mb-3" style="width:40px; height:40px;">
+                                        <i class="bi bi-cart"></i>
+                                    </button-->
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="/nuevo-destino" class="card-link">
+                            <div class="card border-0 rounded-4 position-relative h-100 text-center">
+                                <!--span class="badge bg-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2" style="font-size: 1rem; z-index:2;">SALE!</span-->
+                                <img src="/img/dimeNegro.jpg" class="card-img-top mt-3" alt="Producto 1" style="max-height:160px; object-fit:contain; background:#fff;">
+                                    <div class="card-body pb-2 px-2">
+                                        <div class="fw-normal" style="font-size:.97rem;">Dime Pants Black</div>
+                                        <div class="fw-bold mt-1 mb-1" style="font-size:1.1rem;">₡24,990</div>
+                                    </div>
+                                    <!--button class="btn btn-outline-dark mx-auto mb-3" style="width:40px; height:40px;">
+                                        <i class="bi bi-cart"></i>
+                                    </button-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="/nuevo-destino" class="card-link">
+                            <div class="card border-0 rounded-4 position-relative h-100 text-center">
+                                <!--span class="badge bg-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2" style="font-size: 1rem; z-index:2;">SALE!</span-->
+                                <img src="/img/bigBoyCeleste.jpg" class="card-img-top mt-3" alt="Producto 1" style="max-height:160px; object-fit:contain; background:#fff;">
+                                    <div class="card-body pb-2 px-2">
+                                        <div class="fw-normal" style="font-size:.97rem;">Big Boy Pants Light Blue</div>
+                                        <div class="fw-bold mt-1 mb-1" style="font-size:1.1rem;">₡24,990</div>
+                                    </div>
+                                    <!--button class="btn btn-outline-dark mx-auto mb-3" style="width:40px; height:40px;">
+                                        <i class="bi bi-cart"></i>
+                                    </button-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="/nuevo-destino" class="card-link">
+                            <div class="card border-0 rounded-4 position-relative h-100 text-center">
+                                <!--span class="badge bg-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2" style="font-size: 1rem; z-index:2;">SALE!</span-->
+                                <img src="/img/polar93.jpg" class="card-img-top mt-3" alt="Producto 1" style="max-height:160px; object-fit:contain; background:#fff;">
+                                    <div class="card-body pb-2 px-2">
+                                        <div class="fw-normal" style="font-size:.97rem;">Polar 93! Denim Pant Black</div>
+                                        <div class="fw-bold mt-1 mb-1" style="font-size:1.1rem;">₡24,990</div>
+                                    </div>
+                                    <!--button class="btn btn-outline-dark mx-auto mb-3" style="width:40px; height:40px;">
+                                        <i class="bi bi-cart"></i>
+                                    </button-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="/nuevo-destino" class="card-link">
+                            <div class="card border-0 rounded-4 position-relative h-100 text-center">
+                                <!--span class="badge bg-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2" style="font-size: 1rem; z-index:2;">SALE!</span-->
+                                <img src="/img/polar92.jpg" class="card-img-top mt-3" alt="Producto 1" style="max-height:160px; object-fit:contain; background:#fff;">
+                                    <div class="card-body pb-2 px-2">
+                                        <div class="fw-normal" style="font-size:.97rem;">Polar Skate Co Jeans 92 Denim Dark Blue</div>
+                                        <div class="fw-bold mt-1 mb-1" style="font-size:1.1rem;">₡24,990</div>
+                                    </div>
+                                    <!--button class="btn btn-outline-dark mx-auto mb-3" style="width:40px; height:40px;">
+                                        <i class="bi bi-cart"></i>
+                                    </button-->
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Repite el bloque anterior para más productos -->
+                </div>
+            </div>
+
+        </section>
+
+        <footer th:replace="~{general/fragmentos :: footer}"/>
+    </body>
+</html>

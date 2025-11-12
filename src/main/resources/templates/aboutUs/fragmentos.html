@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"      
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+    <head th:replace="~{general/fragmentos :: head}"></head>
+    <body>
+        <header th:replace="~{general/fragmentos :: header}"/>
+
+        <section th:fragment="sobreus" class="p-3">
+            <style>
+                h2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    margin: 40px 0 20px 0;
+                }
+                h2::before, h2::after {
+                    content: "";
+                    flex: 1;
+                    border-bottom: 2px solid #000;
+                    margin: 0 15px;
+                }
+                iframe {
+                    display: block;
+                    width: 80%;
+                    height: 450px;
+                    border: 0;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                    margin: 0 auto 40px auto; /* margen arriba y abajo con auto a los lados para centrar */
+                }
+                .horarios {
+                    margin: 0 auto 60px auto;
+                    width: 80%;
+                    max-width: 600px;
+                    text-align: center;
+                    border-top: 2px solid #000;
+                    padding-top: 20px;
+                }
+                .horarios h3 {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                }
+                .horarios table {
+                    margin: 0 auto;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                .horarios td {
+                    padding: 8px 12px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .horarios td:first-child {
+                    font-weight: bold;
+                    text-align: left;
+                }
+                .horarios td:last-child {
+                    text-align: right;
+                }
+            </style>
+
+            <h2>Ubicaciones</h2>
+
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NIxQymCPS5BfCVOoLHe44UwyJcq74kc&ehbc=2E312F"></iframe>
+
+            <div class="horarios">
+                <h3>Horarios</h3>
+                <table>
+                    <tr><td>Lunes a Sábado</td><td>9:30 a.m. - 6:00 p.m.</td></tr>
+                    <tr><td>Domingo</td><td>10:00 a.m. - 4:30 p.m.</td></tr>
+                    <!--tr><td>Domingo</td><td>Cerrado</td></tr-->
+                </table>
+            </div>
+        </section>
+    </body>
+</html>
